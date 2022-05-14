@@ -12,7 +12,7 @@ ___
 * Функция выводит пользователей с днями рождения на неделю вперед от текущего дня
 * Неделя начинается с понедельника
 
-1. Створюємо функцію `get_birthdays_per_week()` для обробки і збирання результатів у словник:
+1. **Створюємо функцію `get_birthdays_per_week()` для обробки і збирання результатів у словник:**
 ```python
 def get_birthdays_per_week(users: list) -> dict:
     result = {}
@@ -63,8 +63,30 @@ def get_birthdays_per_week(users: list) -> dict:
     return result
 ```
 
-2. Створюємо функцію `result_birthday()` для виведення результату на екран:
+2. **Створюємо функцію `result_birthday()` для виведення результату на екран:**
 ```python
 def result_birthday():
     print(get_birthdays_per_week(users))
+```
+3. **Для перевірки створимо список словарів:** 
+```python
+users = [
+    {
+        "name": "Bill",
+        "birthday": "2000-05-15"
+    },
+    {
+        "name": "Till",
+        "birthday": "1995-05-20"
+    },
+    {
+        "name": "Alyona",
+        "birthday": "2004-05-14"
+    }
+]
+```
+4. **Викликаємо наші функції:**
+```python
+get_birthdays_per_week(users)
+result_birthday()
 ```
