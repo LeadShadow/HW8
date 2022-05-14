@@ -44,3 +44,4 @@ def get_birthdays_per_week(users: list) -> dict:
 def result_birthday():
     print(get_birthdays_per_week(users))
 ```
+https://files.slack.com/files-pri/T02P892RSHF-F03DXRB6P55/dx.gif
