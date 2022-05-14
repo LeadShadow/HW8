@@ -40,3 +40,7 @@ def get_birthdays_per_week(users: list) -> dict:
 ```
 
 2. Створюємо функцію `result_birthday()` для виведення результату на екран:
+```python
+def result_birthday():
+    print(get_birthdays_per_week(users))
+```
