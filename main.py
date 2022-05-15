@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from unicodedata import name
 
 
 def get_birthdays_per_week(users: list) -> dict:
@@ -11,7 +12,7 @@ def get_birthdays_per_week(users: list) -> dict:
     date_now = datetime.now()
     for i in users:
         birthday = i.get("birthday", None)
-        birt = datetime.strptime(birthday, '%Y-%m-%d')
+        birt = datetime.strptime(birthday, "%Y-%m-%d")
         other_birt = birt.replace(year=date_now.year)
         difference = other_birt.date() - date_now.date()
         if timedelta(-1) <= difference <= timedelta(7):
@@ -50,25 +51,16 @@ def get_birthdays_per_week(users: list) -> dict:
     return result
 
 
-def result_birthday():
-    print(get_birthdays_per_week(users))
+def result_birthday(birthday_dict):
+    for k, v in birthday_dict.items():
+        print(k, ":", ", ".join(v))
 
 
 users = [
-    {
-        "name": "Bill",
-        "birthday": "2000-05-15"
-    },
-    {
-        "name": "Till",
-        "birthday": "1995-05-20"
-    },
-    {
-        "name": "Alyona",
-        "birthday": "2004-05-14"
-    }
+    {"name": "Bill", "birthday": "2000-05-15"},
+    {"name": "Till", "birthday": "1995-05-20"},
+    {"name": "Alyona", "birthday": "2004-05-14"},
 ]
 
-
-get_birthdays_per_week(users)
-result_birthday()
+if __name__ == "__main__":
+    result_birthday(get_birthdays_per_week(users))
